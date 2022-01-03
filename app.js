@@ -1,4 +1,4 @@
-const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+//const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 const divs = document.querySelectorAll(".color");
 const code = document.querySelectorAll(".code");
 const button = document.querySelector("button");
@@ -19,15 +19,14 @@ window.addEventListener("keypress", (e) => {
 
 function generate() {
   for (let i = 0; i < divs.length; i++) {
-    hex = "#";
+    hex="#"
     for (let i = 0; i < 6; i++) {
-      random = Math.floor(Math.random() * values.length - 1) + 1;
-      hex = hex.concat(values[random]);
-     
+      random = Math.floor(Math.random() * 16) ;
+      hex += random.toString(16);
     }
     divs[i].style.backgroundColor = hex;
     code[i].textContent = hex;
-    arr.push(hex)
+    arr.push(hex);
   }
 }
 for (let i = 0; i < wrapper.length; i++) {
@@ -46,21 +45,20 @@ for (let i = 0; i < icon.length; i++) {
 }
 window.addEventListener("keypress", (e) => {
   if (e.code === "KeyC") {
-    
-copyToClipboard(arr.toString())
+    copyToClipboard(arr.toString());
   }
 });
 
 function copyToClipboard(text) {
-var type="text/plain"
-var blob=new Blob([text],{type})
-var data=[new ClipboardItem({[type]:blob})]
-navigator.clipboard.write(data).then(
-function(){
-  console.log("success")
-},
-function(){
-  console.log("failure")
-}
-);
+  var type = "text/plain";
+  var blob = new Blob([text], { type });
+  var data = [new ClipboardItem({ [type]: blob })];
+  navigator.clipboard.write(data).then(
+    function () {
+      console.log("success");
+    },
+    function () {
+      console.log("failure");
+    }
+  );
 }
