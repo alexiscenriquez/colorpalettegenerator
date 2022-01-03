@@ -3,32 +3,38 @@ body {
  font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background-color: #26010f;
+  background-color: #354064;
   color: white;
  transition: all 0.1s ease;
+ justify-content: space-around;
+ height: 100vh;
 }
 h1 {
-  margin-top: 40px;
   font-size: 3em;
 }
 button{
 
-    padding: 20px 30px;
-    border-radius: 5px;
+    padding: 15px 25px;
+    border-radius: 10px;
     cursor: pointer;
     background-color: #272727;
     font-weight: bold;
     color: white;
-    margin-bottom: 5px;
+   justify-self: center;
+}
+button:hover{
+  transform: scale(1.03);
+  filter: drop-shadow(2px 2px 5px rgb(26, 25, 25));
+  color: rgb(210, 211, 211);
+ transition: all 0.2s ease;
+
 }
 .container {
-  margin: auto;
- 
   width: 85%;
   justify-content: space-around;
   display: flex;
   max-width: 900px;
+  margin-bottom: 20px;
 }
 .wrapper{
     height: 200px;
@@ -44,28 +50,41 @@ button{
 }
 .color {
   height: 150px;
-  width: 120px;
+  width: 125px;
   border-radius: 5px;
   content: "";
   margin: auto;
   align-self: flex-start;
   display: flex;
   justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease;
-
+  align-items: center;  transition: all 0.2s ease;
 }
 .fas{
    color: rgb(255, 255, 255);
 font-size: 2em;
 opacity: 0;
-
+ transition: all 0.2s ease;
  cursor: pointer;
- padding:15px;
+ padding:25px;
+}
+
+.copy{
+  
+  background-color: #272727;
+  padding:10px 20px;
+  border-radius: 50px;
 }
 .show{
-    opacity: 1;
-    transition: all 0.3s ease;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+text-align: center;
+height: 200px;
 }
 @media(max-width:700px){
     .container{
@@ -74,6 +93,9 @@ opacity: 0;
         gap: 20px;
         width: 90%;
         grid-template-columns: 150px 150px;
-
+margin-bottom: 30px;
+    }
+    .wrapper:last-child{
+      justify-self: center;
     }
 }
