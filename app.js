@@ -1,4 +1,3 @@
-//const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 const divs = document.querySelectorAll(".color");
 const code = document.querySelectorAll(".code");
 const button = document.querySelector("button");
@@ -19,9 +18,9 @@ window.addEventListener("keypress", (e) => {
 
 function generate() {
   for (let i = 0; i < divs.length; i++) {
-    hex="#"
+    hex = "#";
     for (let i = 0; i < 6; i++) {
-      random = Math.floor(Math.random() * 16) ;
+      random = Math.floor(Math.random() * 16);
       hex += random.toString(16);
     }
     divs[i].style.backgroundColor = hex;
